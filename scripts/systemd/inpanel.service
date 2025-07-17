@@ -1,0 +1,21 @@
+[Unit]
+Description = InPanel
+
+[Service]
+Type = simple
+User = root
+Group = root
+Type = simple
+PIDFile = /var/run/inpanel.pid
+# WorkingDirectory = /usr/local/inpanel
+# ExecStartPre =
+ExecStart = /usr/bin/python /usr/local/inpanel/server.py
+# ExecReload =
+# ExecStop =
+StartLimitInterval = 30min
+
+[Install]
+WantedBy = multi-user.target
+
+# /lib/systemd/system/inpanel.service
+# systemctl start inpanel.service && systemctl enable inpanel.service
